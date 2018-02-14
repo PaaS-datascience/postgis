@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  postgres:
+    image: postgres:10
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: chang:M3! 
+    mem_limit: 2g
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    # ports:
+    #   - 5432:5432
+
+networks:
+  default:
+    external:
+      name: latelier
+
