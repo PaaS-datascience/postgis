@@ -2,8 +2,11 @@ version: '2'
 
 services:
   postgres:
-    image: postgres:10
-    container_name: postgres
+    build: 
+      context : .
+      args:
+        proxy: ${http_proxy}
+    container_name: postgis
     environment:
       POSTGRES_PASSWORD: chang:M3! 
     mem_limit: 2g
